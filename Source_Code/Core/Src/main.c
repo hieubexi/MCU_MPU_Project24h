@@ -26,6 +26,7 @@
 #include "display7SEG.h"
 #include "button.h"
 #include "input_process.h"
+#include "led_debug.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -102,11 +103,8 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	  if(timer2_flag >= 1){
-		  setTimer2(1000) ;
-		  HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin) ;
-	  }
 	  fsm_simple_buttons_run();
+	  led_debugging();
 	  display7SEG(counter);
 
     /* USER CODE BEGIN 3 */

@@ -54,8 +54,6 @@ void getKeyInput(){
 	  	else if (i == 1) KeyReg2[i] = HAL_GPIO_ReadPin(INC_GPIO_Port, INC_Pin);
 	  	else if (i == 2) KeyReg2[i] = HAL_GPIO_ReadPin(DEC_GPIO_Port, DEC_Pin);
 
-//  		if(long_flag[i] == 1) time_count_up[i] = TIME_AUTO ;
-//  		if(is_button_long_Pressed(i) == 0) time_count_up[i] = TIME_HOLD ;
 
 	  	if ((KeyReg0[i] == KeyReg1[i]) && (KeyReg1[i] == KeyReg2[i])){
 

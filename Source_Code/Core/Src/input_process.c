@@ -17,24 +17,22 @@ void fsm_simple_buttons_run(){
 
 			if(timer1_flag >= 1){
 				setTimer1(1000);
+
 				if(counter > 0)	counter--;
 			}
 			break;
 		case RESET_NOR:
-
 			counter = 0 ;
 
-			is_button_long_Pressed(No_INC - 1);
-			is_button_long_Pressed(No_DEC - 1);
 			if( is_button_Pressed(No_INC - 1) ) choice = INC_NOR ;
 			if( is_button_Pressed(No_DEC - 1) ) choice = DEC_NOR ;
 			else {
 				choice = INIT ;
 				setTimer1(TIME_OUT);
+				setTimer2(1000);
 			}
 			break;
 		case INC_NOR:
-
 			counter++;
 			if(counter >= 10) counter = 0 ;
 
@@ -44,6 +42,7 @@ void fsm_simple_buttons_run(){
 			else {
 				choice = INIT ;
 				setTimer1(TIME_OUT);
+				setTimer2(1000);
 			}
 			break;
 		case DEC_NOR:
@@ -54,6 +53,7 @@ void fsm_simple_buttons_run(){
 			else{
 				choice = INIT ;
 				setTimer1(TIME_OUT);
+				setTimer2(1000);
 			}
 			break;
 		case INC_LONG:
@@ -61,6 +61,7 @@ void fsm_simple_buttons_run(){
 				is_button_long_Pressed(No_INC - 1);
 				choice = INIT;
 				setTimer1(TIME_OUT) ;
+				setTimer2(1000);
 			}
 			if(timer1_flag >= 1){
 				setTimer1(1000) ;
@@ -70,9 +71,9 @@ void fsm_simple_buttons_run(){
 			break;
 		case DEC_LONG:
 			if(!is_button_Pressed(No_DEC - 1)) {
-
 				choice = INIT;
 				setTimer1(TIME_OUT) ;
+				setTimer2(1000);
 			}
 			if(timer1_flag >= 1){
 				setTimer1(1000) ;

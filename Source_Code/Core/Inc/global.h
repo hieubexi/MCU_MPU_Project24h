@@ -17,6 +17,8 @@
 #define No_INC	 	2
 #define No_DEC	 	3
 
+#define REST		4
+
 #define	RESET_LONG	11
 #define INC_LONG	12
 #define DEC_LONG	13
