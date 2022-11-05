@@ -12,7 +12,6 @@ int timer1_flag = 0;
 int timer2_counter = 0;
 int timer2_flag = 0;
 
-
 int timer3_counter = 0;
 int timer3_flag = 0;
 
