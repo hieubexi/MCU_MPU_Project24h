@@ -21,7 +21,7 @@
 int is_button_Pressed(int index) ;
 //long press
 int is_button_long_Pressed(int index) ;
-
+int is_button_pressed_3s(int index) ;
 void getKeyInput();
 
 

@@ -37,10 +37,18 @@ int is_button_long_Pressed(int index){
 		}
 	return 0 ;
 }
+int is_button_pressed_3s(int index) {
+	if(long_flag[index] == 1){
+			return 1;
+		}
+	return 0 ;
+}
+
 void subKeyProcess(int index){
 	 nor_flag[index] = 1 ;
 
 }
+
 void subKeyLongPress(int index){
 	long_flag[index] = 1 ;
 }
@@ -56,7 +64,6 @@ void getKeyInput(){
 
 
 	  	if ((KeyReg0[i] == KeyReg1[i]) && (KeyReg1[i] == KeyReg2[i])){
-
 	  		if (KeyReg3[i] != KeyReg2[i]){
 	  	       KeyReg3[i] = KeyReg2[i];
 	  	      if (KeyReg2[i] == PRESSED_STATE){
@@ -68,6 +75,7 @@ void getKeyInput(){
 	  		   if(long_flag[i] == 1){
 	 	  		  TimeOutForKeyPress[i]++;
 	 	  	       if(TimeOutForKeyPress[i] > TIME_AUTO  ){
+	 	  	   // 	subKeyLongPress(i);
 	 	  	          KeyReg3[i] = NORMAL_STATE;
 	 	  	        }
 	  		   }else{

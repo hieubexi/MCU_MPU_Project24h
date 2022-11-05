@@ -9,16 +9,8 @@
 
 void led_debugging(){
 	switch (choice) {
-		//Turn on the Led when button DEC is pressed
+		//Turn on the Led when button RESET is pressed
 	case RESET_NOR :
-			HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, RESET) ;
-			break;
-			//Turn on the Led when button INC is pressed
-		case INC_NOR:
-			HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, RESET) ;
-			break;
-			//Turn on the Led when button DEC is pressed
-		case DEC_NOR:
 			HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, RESET) ;
 			break;
 		default:
